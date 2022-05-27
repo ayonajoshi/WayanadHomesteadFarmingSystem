@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form action="/edit_items_post" method="post" enctype="multipart/form-data" name="form1" id="form1">
+    <table border="1">
+        <tr>
+            <img src="{{ i['image'] }}" height="100px" width="100px">
+        </tr>
+        <input type="hidden" name="itmid" value="{{ i['item_id'] }}">
+        <tr>
+            <td>Name</td>
+            <td><input type="text" name="textfield"  value="{{ i['name'] }}"/></td>
+        </tr>
+        <tr>
+            <td>image</td>
+            <td><input type="file" name="filefield"></td>
+        </tr>
+        <tr>
+            <td>Price</td>
+            <td><input type="text" name="textfield2" value="{{ i['price'] }} "/></td>
+        </tr>
+        <tr>
+            <td>Description</td>
+            <td><textarea name="textarea" >{{ i['description'] }}</textarea></td>
+        </tr>
+        <tr>
+            <td>
+            <input type="submit" name="submit" value="edit">
+            </td>
+        </tr>
+
+
+
+    </table>
+</form>
+</body>
+</html>

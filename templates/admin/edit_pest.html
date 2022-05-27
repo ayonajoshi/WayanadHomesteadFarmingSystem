@@ -1,0 +1,65 @@
+{% extends 'adminindex.html' %}
+{% block body %}
+<body>
+<form action="/view_pest_post" method="post" enctype="multipart/form-data" name="form1" id="form1">
+
+{#      <table border="1">#}
+{#        <tr>#}
+{#            <td>Item name</td>#}
+{#            <td><input type="text" name="textfield"></td>#}
+{#            <td>#}
+{#            <input type="submit" name="submit" value="search">#}
+{#            </td>#}
+{#        </tr>#}
+{##}
+{#    </table>#}
+
+<div class="container">
+
+    <table class="table">
+        <input type="hidden" name="pid" value="{{ i['pid'] }}">
+        <tr>
+            <td colspan="2" align="center"><img src="{{ i['image'] }}" width="100px" height="100px"></td>
+        </tr>
+
+ <tr>
+      <td>Name</td>
+      <td>
+          <input type="text" name="textfield" value="{{ i['name'] }}" class="form-control" required/>
+      </label></td>
+    </tr>
+
+    <tr>
+      <td>Type</td>
+      <td>
+       <input type="text" name="textfield3" value="{{ i['type'] }}" class="form-control" required/>
+      </label></td>
+    </tr>
+    <tr>
+      <td>Specification</td>
+      <td>
+      <input type="text" name="textfield4" value="{{ i['specification'] }}" class="form-control" required/>
+      </label></td>
+    </tr>
+    <tr>
+      <td>Image</td>
+      <td>
+          <input type="file"  name="filefield" class="form-control" required>
+
+      </label></td>
+    </tr>
+
+
+      <td colspan="2"><label>
+
+          <input type="submit" name="Submit" value="UPDATE" class="btn btn-outline-info"/>
+
+      </label></td>
+    </tr>
+
+  </table>
+</div>
+</form>
+
+</body>
+{% endblock %}

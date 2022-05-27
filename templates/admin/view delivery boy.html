@@ -1,0 +1,43 @@
+{% extends 'adminindex.html' %}
+{% block body %}
+<form id="form1" name="form1" method="post" action="/view_deliveryboy_post">
+  <p>&nbsp;</p>
+  <table width="253" border="1">
+    <tr>
+      <td width="37" height="42"><label><br />
+      
+      Name</label></td>
+      <td width="144"><label>
+        <input type="text" name="textfield" />
+      </label></td>
+      <td width="50"><label>
+        <input type="submit" name="Submit" value="go" />
+      </label></td>
+    </tr>
+  </table>
+  <p>&nbsp;</p>
+  <table width="252" border="1">
+    <tr>
+      <td width="33">S.No</td>
+      <td width="33">Name</td>
+      <td width="33">Address</td>
+      <td width="70">Contact</td>
+      <td width="49">&nbsp;</td>
+    </tr>
+
+      {% for i in data  %}
+    <tr>
+      <td height="72">{{ loop.index }}&nbsp;</td>
+      <td>&nbsp;{{ i['name'] }}<br><img src="{{ i['image'] }}" width="100" height="100"> </td>
+      <td>&nbsp;{{ i['place'] }},{{ i['pin'] }},{{ i['post'] }}</td>
+      <td>{{ i['contact'] }}&nbsp;</td>
+      <td><p><a href="/edit_deliveryboy/{{ i['delev_id'] }}">Edit</a></p>
+      <p><a href="/del_deliveryboy/{{ i['delev_id'] }}">Delete</a></p></td>
+    </tr>
+      {% endfor %}
+
+  </table>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+</form>
+{% endblock %}

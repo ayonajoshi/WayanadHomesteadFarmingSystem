@@ -1,0 +1,31 @@
+{% extends 'adminindex.html' %}
+{% block body %}
+<form action="/add_items_post" method="post" enctype="multipart/form-data" name="form1" id="form1">
+    <table class="table table-striped">
+        <tr>
+            <th>Name</th>
+            <td><input type="text" name="textfield" class="form-control" required/></td>
+        </tr>
+        <tr>
+            <th>image</th>
+            <td><input type="file" name="filefield" class="form-control" required></td>
+        </tr>
+        <tr>
+            <th>Price</th>
+            <td><input type="text" name="textfield2" class="form-control" required /></td>
+        </tr>
+        <tr>
+            <th>Discription</th>
+            <td><textarea name="textarea" class="form-control" required></textarea></td>
+        </tr>
+        <tr>
+            <td colspan="2" align="center">
+            <input type="submit" name="submit" value="Add" class="btn btn-outline-info">
+            </td>
+        </tr>
+
+
+
+    </table>
+</form>
+{% endblock %}

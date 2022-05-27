@@ -1,0 +1,26 @@
+{% extends 'adminindex.html' %}
+{% block body %}
+<div class="container">
+<form id="form1" name="form1" method="post" action="/view_reply_post">
+            <input type="hidden" name="cid" value="{{  res['complaint_id'] }}">
+
+  <table class="table">
+    <tr>
+      <td> Reply</td>
+      <td>
+        <textarea name="mm" class="form-control" required></textarea>
+      </label></td>
+    </tr>
+    <tr>
+      <td height="66" colspan="2"><p>
+
+      </p>      
+        <p align="center">
+          <input type="submit" name="Submit" value="Send" class="btn btn-success" />
+        </p></td>
+    </tr>
+  </table>
+
+</form>
+</div>
+{% endblock %}

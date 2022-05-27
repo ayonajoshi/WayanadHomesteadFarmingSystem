@@ -1,0 +1,32 @@
+{% extends 'adminindex.html' %}
+{% block body %}
+<form id="form1" name="form1" method="post" action="/view_advertisement_post">
+<div class="container">
+<br>
+  <table class="table table-bordered">
+    <tr>
+      <th>sl.no</th>
+      <th>User Info</th>
+      <th>Product name</th>
+      <th>product image</th>
+        <th>description</th>
+      <td>&nbsp;</td>
+    </tr>
+      {% for i in data %}
+    <tr>
+      <td>{{ loop.index }}</td>
+      <td>&nbsp;{{ i['name'] }}<br>
+          {{ i['phone'] }}<br>
+          {{ i['email'] }}
+
+      </td>
+        <td>{{ i['product_name'] }}</td>
+      <td>&nbsp;<img src="{{ i['product_image'] }}" height="100px" width="100px"></td>
+        <td>{{ i['description'] }}</td>
+
+    </tr>
+      {% endfor %}
+  </table>
+</div>
+</form>
+{% endblock %}

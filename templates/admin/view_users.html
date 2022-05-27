@@ -1,0 +1,38 @@
+{% extends "adminindex.html" %}
+{% block body %}
+    <div class="container">
+    <br>
+{#    {% if messages %}#}
+{#        {% for mess in messages %}#}
+{#        <div class="alert alert-success"><strong>{{ mess }}</strong>#}
+{#            <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">x</span> </button>#}
+{#        </div>{% endfor %}#}
+{#    {% endif %}#}
+  <table class="table table-bordered">
+    <tr>
+      <td colspan="6" align="center"><h5>NEW USERS DETAILS</h5></td></tr>
+{##}
+{#    <tr style="color: white" bgcolor="black" >#}
+{#      <th>sl.no</th>#}
+{#      <th>Image</th>#}
+{#      <th>Username</th>#}
+{#      <th>Date</th>#}
+{#        <td>Rating</td>#}
+{#      <td colspan="2"></td>#}
+{#    </tr>#}
+    {% for i in data %}
+    <tr>
+      <td>{{ loop.index }}&nbsp;</td>
+        <td><img src="{{ i['image'] }}" width="100" height="100"></td>
+      <td>User Name :{{ i['name'] }}&nbsp;<br>
+          Phone Number:{{ i['phone'] }}<br>
+          <br>
+          Email:{{ i['email'] }}<br>
+          Address:
+        {{ i['place'] }}<br>{{ i['post'] }}<br>{{ i['district'] }}<br>{{ i['pin'] }}</td>
+        <td><a href="/apporrjt/{{ i['lid'] }}" class="btn btn-warning">Approve</a></td>
+        <td><a href="/apporrjt2/{{ i['lid'] }}" class="btn btn-danger">Reject</a></td>
+    </tr>{% endfor %}
+  </table>
+    </div>
+{% endblock %}

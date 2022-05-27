@@ -1,0 +1,38 @@
+{% extends 'adminindex.html' %}
+{% block body %}
+    <br>
+<form action="/add_pest_post" method="post" enctype="multipart/form-data" name="form1" id="form1">
+  <div class="container">
+      <table class="table table-striped">
+    <tr>
+      <td width="71">Name</td>
+      <td>
+        <input type="text" name="textfield" class="form-control" required/>
+      </label></td>
+    </tr>
+    <tr>
+      <td>Type</td>
+      <td>
+        <select name="select" class="form-control" required>
+            <option value="organic">organic</option>
+            <option value="chemical">chemical</option>
+        </select>
+      </label></td>
+    </tr>
+    <tr>
+      <td>Image</td>
+      <td>
+        <input type="file" name="file" class="form-control" required/>
+      </label></td>
+    </tr>
+
+      <td colspan="2" align="center"><label>
+        <div align="center">
+          <input type="submit" name="Submit" value="Upload" class="btn btn-primary"/>
+          </div>
+      </label></td>
+    </tr>
+  </table>
+  </div>
+</form>
+{% endblock %}

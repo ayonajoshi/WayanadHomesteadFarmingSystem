@@ -1,0 +1,26 @@
+{% extends 'adminindex.html' %}
+{% block body %}
+<form action="/add_advertisements_post" method="post" enctype="multipart/form-data" name="form1" id="form1">
+    <table border="1">
+        <tr>
+            <td>product_name</td>
+            <td><input type="text" name="product_name" /></td>
+        </tr>
+        <tr>
+            <td>product_image</td>
+            <td><input type="file" name="product_image"></td>
+        <tr>
+            <td>Description</td>
+            <td><textarea name="textarea"></textarea></td>
+        </tr>
+        <tr>
+            <td>
+            <input type="submit" name="submit" value="add">
+            </td>
+        </tr>
+
+
+
+    </table>
+</form>
+{% endblock %}

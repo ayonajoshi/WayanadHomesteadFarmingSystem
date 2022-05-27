@@ -1,0 +1,62 @@
+{% extends 'adminindex.html' %}
+{% block body %}
+<div class="container">
+<form action="/edit_fert_post" method="post" enctype="multipart/form-data" name="form1" id="form1">
+
+{#      <table border="1">#}
+{#        <tr>#}
+{#            <td>Item name</td>#}
+{#            <td><input type="text" name="textfield"></td>#}
+{#            <td>#}
+{#            <input type="submit" name="submit" value="search">#}
+{#            </td>#}
+{#        </tr>#}
+{##}
+{#    </table>#}
+
+
+
+    <table class="table">
+        <input type="hidden" name="f_id" value="{{ i['fid'] }}">
+        <tr>
+            <td colspan="2" align="center"><img src="{{ i['image'] }}" width="100px" height="100px"></td>
+        </tr>
+
+ <tr>
+      <th>Name</th>
+      <td>
+          <input type="text" class="form-control" required name="textfield" value="{{ i['name'] }}"/>
+      </label></td>
+    </tr>
+
+    <tr>
+      <th>Type</th>
+      <td>
+       <input type="text" name="textfield3" class="form-control" required value="{{ i['type'] }}"/>
+      </label></td>
+    </tr>
+    <tr>
+      <th>Specification</th>
+      <td>
+        <textarea name="textarea" class="form-control" required>{{ i['specification'] }}</textarea>
+      </label></td>
+    </tr>
+    <tr>
+      <th>Image</th>
+      <td>
+          <input type="file"  name="filefield" class="form-control" required >
+
+      </label></td>
+    </tr>
+      <td height="26" colspan="2"><label>
+        <div align="center">
+          <input type="submit" name="Submit" value="UPDATE" class="btn btn-success" />
+          </div>
+      </label></td>
+    </tr>
+
+  </table>
+</form>
+
+</div>
+{% endblock %}

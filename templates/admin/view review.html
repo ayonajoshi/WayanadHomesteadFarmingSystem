@@ -1,0 +1,38 @@
+{% extends "adminindex.html" %}
+{% block body %}
+    <div class="container">
+    <br>
+{#    {% if messages %}#}
+{#        {% for mess in messages %}#}
+{#        <div class="alert alert-success"><strong>{{ mess }}</strong>#}
+{#            <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">x</span> </button>#}
+{#        </div>{% endfor %}#}
+{#    {% endif %}#}
+  <table class="table table-bordered">
+    <tr>
+      <td colspan="6" align="center"><h5>REVIEW DETAILS</h5></td></tr>
+{##}
+{#    <tr style="color: white" bgcolor="black" >#}
+{#      <th>sl.no</th>#}
+{#      <th>Image</th>#}
+{#      <th>Username</th>#}
+{#      <th>Date</th>#}
+{#        <td>Rating</td>#}
+{#      <td colspan="2"></td>#}
+{#    </tr>#}
+    {% for i in data %}
+    <tr>
+      <td>{{ loop.index }}&nbsp;</td>
+        <td><img src="{{ i['image'] }}" width="100" height="100"></td>
+      <td>User Info{{ i['name'] }}&nbsp;<br>
+          Item Name:{{ i['iname'] }}<br>
+          <br>
+          Date:{{ i['date'] }}<br>
+          Review:
+        {{ i['review'] }}<br></td>
+{#        <td><a href="/admin_view_rating" class="btn btn-warning">Reviews</a>/td>#}
+{#        <td><a href="/admin_view_carss_more/{{ i['carid'] }}" class="btn btn-warning">More</a></td>#}
+    </tr>{% endfor %}
+  </table>
+    </div>
+{% endblock %}

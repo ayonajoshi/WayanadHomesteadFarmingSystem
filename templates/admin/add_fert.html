@@ -1,0 +1,47 @@
+{% extends 'adminindex.html' %}
+{% block body %}
+    <div class="container">
+    <br>
+    <form action="/add_fert_post" method="post" enctype="multipart/form-data" name="form1" id="form1">
+
+  <table class="table">
+    <tr>
+      <th>Name</th>
+      <th>
+        <input type="text" name="textfield" class="form-control" required />
+      </label></th>
+    </tr>
+    <tr>
+      <td>Type</td>
+      <td><label>
+        <select name="select" class="form-control" required>
+            <option value="organic">organic</option>
+            <option value="chemical">chemical</option>
+        </select>
+      </label></td>
+    </tr>
+    <tr>
+      <td>Image</td>
+      <td>
+        <input type="file" name="file" class="form-control" required/>
+      </label></td>
+    </tr>
+    <tr>
+      <td>How to use </td>
+      <td>
+        <textarea name="textarea" class="form-control" required></textarea>
+      </label></td>
+    </tr>
+    <tr>
+      <td colspan="2"><label>
+        <div align="center">
+          <input type="submit" name="Submit" value="Upload" class="btn btn-outline-info"/>
+          </div>
+      </label></td>
+    </tr>
+  </table>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+</form>
+    </div>
+{% endblock %}

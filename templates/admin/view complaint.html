@@ -1,0 +1,55 @@
+{% extends 'adminindex.html' %}
+{% block body %}
+<div class="container">
+<form id="form1" name="form1" method="post" action="/view_complaint_post">
+  <p>&nbsp;</p>
+  <table class="pull-right">
+    <tr>
+      <td width="66">DateFrom </td>
+      <td width="144"><label>
+        <input type="date" name="textfield"class="form-control" required/>
+      </label></td>
+      <td width="70">To</td>
+      <td width="22"><label>
+        <input type="date" name="textfield2" class="form-control" required />
+      </label></td>
+      <td width="119"><label>
+        <input type="submit" name="Submit" value="go" class="btn btn-info"/>
+      </label></td>
+    </tr>
+  </table>
+  <table class="table table-bordered">
+    <tr>
+      <th>#</th>
+      <th>Date</th>
+      <th>UserInfo</th>
+      <th>Complaint</th>
+        <th>Reply</th>
+
+      <td></td>
+    </tr>
+   {% for i in data %}
+    <tr>
+      <td>{{ loop.index }}&nbsp;</td>
+        <td>{{ i['date'] }}&nbsp;</td>
+        <td>{{ i['name'] }}<br>
+            {{ i['place'] }}<br>
+            {{ i['phone'] }}
+
+
+            </td>
+      <td>&nbsp;{{ i['complaint'] }}</td>
+
+        <td>{% if i['status']=='pending' %}
+            <p><a href="/reply/{{ i['complaint_id'] }}" class="btn btn-outline-primary">reply</a></p>
+    {% else %}
+             {{ i['reply']}}
+    {% endif %}
+    </td>
+    </tr>
+      {% endfor %}
+
+  </table>
+
+</form>
+{% endblock %}

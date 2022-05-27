@@ -1,0 +1,30 @@
+{% extends 'adminindex.html' %}
+{% block body %}
+<body>
+<form id="form1" name="form1" method="post" action="/view_pest_post">
+<div class="container">
+<br><br>
+  <table class="table table-bordered">
+    <tr>
+      <th>sl.no</th>
+      <th>Name</th>
+        <th>Image</th>
+      <th>Type</th>
+      <th>Specification</th>
+      <td>&nbsp;</td>
+    </tr>
+      {% for i in data %}
+    <tr>
+      <td>{{ loop.index }}</td>
+      <td>&nbsp;{{ i['name'] }}</td>
+      <td>&nbsp;<img src="{{ i['image'] }}" height="100px" width="100px"></td>
+      <td>{{ i['type'] }}</td>
+        <td>{{ i['specification'] }}</td>
+      <td><p><a href="/edit_pest/{{ i['pid'] }}" class="btn btn-outline-info">Edit</a></p>
+      <p><a href="/delete_pest/{{ i['pid'] }}" class="btn btn-outline-danger">Delete</a></p></td>
+    </tr>
+      {% endfor %}
+  </table>
+</div>
+</form>
+{% endblock %}
